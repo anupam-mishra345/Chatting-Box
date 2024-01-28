@@ -1,264 +1,302 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Chatting Box</title>
+  <head>
+    <title>Chatting Box</title>
 
-        <link rel="icon" href="e57821f1317893d1c2d8e184d4f9d595-chat-bubble-icon-by-vexels.png">
+    <link
+      rel="icon"
+      href="e57821f1317893d1c2d8e184d4f9d595-chat-bubble-icon-by-vexels.png"
+    />
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url(beach-birds-calm-clouds-219998.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      #heading {
+        color: orangered;
+        font-size: 40px;
+        display: inline-block;
+        padding: 5px 20px;
+        border-radius: 10px;
+        font-family: forte;
+        background-color: rgb(0, 0, 0, 0.5);
+      }
 
-        <style>
-            *{
-                box-sizing: border-box;
-            }
-            body{
-                background-image: url(beach-birds-calm-clouds-219998.jpg);
-                background-attachment: fixed;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-            #heading{
-                color: orangered;
-                font-size: 40px;
-                display: inline-block;
-                padding: 5px 20px;
-                border-radius: 10px;
-                font-family: forte;
-                background-color: rgb(0,0,0,0.5);
-            }
+      #divA {
+        overflow-y: scroll;
+        border: 2px solid white;
+        height: 500px;
+        min-width: 300px;
+        background-color: rgb(0, 0, 0, 0.4);
+      }
 
-            #divA{
-                overflow-y: scroll;
-                border: 2px solid white;
-                height: 500px;
-                min-width: 300px;
-                background-color: rgb(0,0,0,0.4);
-            }
+      #divB {
+        overflow-y: scroll;
+        border: 2px solid white;
+        height: 500px;
+        min-width: 300px;
+        background-color: rgb(0, 0, 0, 0.4);
+      }
 
-            #divB{
-                overflow-y: scroll;
-                border: 2px solid white;
-                height: 500px;
-                min-width: 300px;
-                background-color: rgb(0,0,0,0.4);
-            }
+      #head1 {
+        border: 2px solid white;
+        color: white;
+        background-color: #136747;
+        height: 80px;
+        min-width: 300px;
+      }
 
+      #head1 img {
+        margin: 10px 0px 0px 20px;
+        border-radius: 30px;
+      }
 
-            #head1{
-                border: 2px solid white;
-                color: white;
-                background-color: #136747;
-                height: 80px;
-                min-width: 300px;
-            }
+      #head2 {
+        border: 2px solid white;
+        color: white;
+        background-color: #136747;
+        height: 80px;
+        min-width: 300px;
+      }
 
-            #head1 img{
-                margin: 10px 0px 0px 20px;
-                border-radius: 30px;
-            }
+      #head2 img {
+        margin: 10px 0px 0px 20px;
+        border-radius: 30px;
+      }
+      h3 {
+        margin: -40px 0px 0px 100px;
+        font-family: goudy old style;
+        font-weight: 900;
+      }
+      #inp1,
+      #inp2 {
+        height: 50px;
+        color: aliceblue;
+        font-size: 24px;
+      }
+      #text1,
+      #text2 {
+        color: aliceblue;
+        font-size: 24px;
+      }
 
-            #head2{
-                border: 2px solid white;
-                color: white;
-                background-color: #136747;
-                height: 80px;
-                min-width: 300px;
-            }
+      #btn1,
+      #btn2 {
+        margin-bottom: 5px;
+        height: 45px;
+        background-color: green;
+        color: aliceblue;
+      }
 
-            #head2 img{
-                margin: 10px 0px 0px 20px;
-                border-radius: 30px;
-            }
-            h3{
-                margin:-40px 0px 0px 100px;
-                font-family: goudy old style;
-                font-weight: 900;
-            }
-            #inp1,#inp2{
-                height: 50px;
-                color: aliceblue;
-                font-size: 24px;
-            }
-            #text1,#text2{
-                color: aliceblue;
-                font-size: 24px;
-            }
-
-            #btn1,#btn2{
-                margin-bottom:5px;
-                height: 45px;
-                background-color: green;
-                color: aliceblue;
-            }
-
-
-            .childA1{
-                /*                background-color: lightgreen;*/
-                text-align: right;
-                font-size: 18px;
-                font-family: comic sans ms;
-                padding-right: 15px;
-            }
-            .childA2{
-                /*                background-color: aliceblue;*/
-                font-size: 18px;
-                font-family: comic sans ms;
-                padding-left: 15px;
-            }
-            .childB1{
-                /*                background-color: aliceblue;*/
-                font-size: 18px;
-                font-family: comic sans ms;
-                padding-left: 15px;
-            }
-            .childB2{
-                /*                background-color: lightgreen;*/
-                text-align: right;
-                font-size: 18px;
-                font-family: comic sans ms;
-                padding-right: 15px;
-            }
-            .childA1 span{
-                background-color: lightgreen;
-/*                border-radius: 5px;*/
-            }
-            .childA2 span{
-                background-color: aliceblue;
-/*                border-radius: 5px;*/
-            }
-            /*
+      .childA1 {
+        /*                background-color: lightgreen;*/
+        text-align: right;
+        font-size: 18px;
+        font-family: comic sans ms;
+        padding-right: 15px;
+      }
+      .childA2 {
+        /*                background-color: aliceblue;*/
+        font-size: 18px;
+        font-family: comic sans ms;
+        padding-left: 15px;
+      }
+      .childB1 {
+        /*                background-color: aliceblue;*/
+        font-size: 18px;
+        font-family: comic sans ms;
+        padding-left: 15px;
+      }
+      .childB2 {
+        /*                background-color: lightgreen;*/
+        text-align: right;
+        font-size: 18px;
+        font-family: comic sans ms;
+        padding-right: 15px;
+      }
+      .childA1 span {
+        background-color: lightgreen;
+        /*                border-radius: 5px;*/
+      }
+      .childA2 span {
+        background-color: aliceblue;
+        /*                border-radius: 5px;*/
+      }
+      /*
             .childB1 span{
             background-color: aliceblue;
             border-radius: 5px;
             }
             */
-            .parentSpan{
-                background-color: aliceblue;
-                border-radius: 8px;
-                padding: 5px;
-            }
-            .childB2 span{
-                background-color: lightgreen;
-/*                border-radius: 5px;*/
-            }
-            .time{
-                vertical-align: -30%;
-                font-size: 12px;
-                color: gray;
-            }
-        </style>
+      .parentSpan {
+        background-color: aliceblue;
+        border-radius: 8px;
+        padding: 5px;
+      }
+      .childB2 span {
+        background-color: lightgreen;
+        /*                border-radius: 5px;*/
+      }
+      .time {
+        vertical-align: -30%;
+        font-size: 12px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <div class="container-fluid">
+      <center><h1 id="heading">Chatting Box</h1></center>
+    </div>
 
-    </head>
-    <body>
-       <br>
-        <div class="container-fluid">
-            <center><h1 id="heading">Chatting Box</h1></center>
-        </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+          <center>
+            <table>
+              <tr>
+                <td>
+                  <div id="head1">
+                    <img
+                      src="squarequick_201883134929130.jpg"
+                      alt="image "
+                      height="50px"
+                      width="50px"
+                    />
+                    <h3 id="anupam">Anupam</h3>
+                  </div>
+                </td>
+              </tr>
 
-        <div class="row">
-
-            <div class="col-md-1"></div>
-
-            <div class="col-md-4">
-                <center>
-                    <table> 
-                        <tr>
-                            <td>
-                                <div id="head1">
-                                    <img src="squarequick_201883134929130.jpg" alt="image " height="50px" width="50px">
-                                    <h3 id="anupam">Anupam</h3>
-                                </div>
-                            </td>
-                        <tr>
-                            <td>
-                                <div id="divA">
-                                    <br>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="divI1">
-                                    <table>
-                                        <tr>
-                                            <td id="inp1">
-                                                <textarea id="text1" name="msg1" style="resize: none;background-color: rgb(0,0,0,0.4)" cols="30" rows="1"></textarea>
-                                            </td>
-                                            <td>
-                                                <input id="btn1" type="Submit" value="Send" onclick="user1()">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-                <br><br>
-            </div>
-
-            <div class="col-md-2"></div>
-
-            <div class="col-md-4">
-                <center>
+              <tr>
+                <td>
+                  <div id="divA">
+                    <br />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="divI1">
                     <table>
-                        <tr>
-                            <td>
-                                <div id="head2">
-                                    <img src="IMG_20200527_080700.jpg" alt="image" height="50px" width="50px">
-                                    <h3 id="devesh">Devesh</h3>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="divB">
-                                    <br>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="divI2">
-                                    <table>
-                                        <tr>
-                                            <td id="inp2">
-                                                <textarea id="text2" name="msg2" style="resize: none;background-color: rgb(0,0,0,0.4)" cols="30" rows="1"></textarea>
-                                            </td>
-                                            <td>
-                                                <input id="btn2" type="Submit" value="Send" onclick="user2()">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
+                      <tr>
+                        <td id="inp1">
+                          <textarea
+                            id="text1"
+                            name="msg1"
+                            style="
+                              resize: none;
+                              background-color: rgb(0, 0, 0, 0.4);
+                            "
+                            cols="30"
+                            rows="1"
+                            onkeydown="submitUser1(event)"
+                          ></textarea>
+                        </td>
+                        <td>
+                          <input
+                            id="btn1"
+                            type="Submit"
+                            value="Send"
+                            onclick="user1()"
+                          />
+                        </td>
+                      </tr>
                     </table>
-                </center>
-            </div>
-
-            <div class="col-md-1"></div>
-
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </center>
         </div>
 
+        <div class="col-lg-2"></div>
 
+        <div class="col-lg-4">
+          <center>
+            <table>
+              <tr>
+                <td>
+                  <div id="head2">
+                    <img
+                      src="IMG_20200527_080700.jpg"
+                      alt="image"
+                      height="50px"
+                      width="50px"
+                    />
+                    <h3 id="devesh">Devesh</h3>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="divB">
+                    <br />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="divI2">
+                    <table>
+                      <tr>
+                        <td id="inp2">
+                          <textarea
+                            id="text2"
+                            name="msg2"
+                            style="
+                              resize: none;
+                              background-color: rgb(0, 0, 0, 0.4);
+                            "
+                            cols="30"
+                            rows="1"
+                            onkeydown="submitUser2(event)"
+                          ></textarea>
+                        </td>
+                        <td>
+                          <input
+                            id="btn2"
+                            type="Submit"
+                            value="Send"
+                            onclick="user2()"
+                          />
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </center>
+        </div>
 
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </body>
 
-    </body>
-
-    <script src="chatting.js">
-
-    </script>
-
+  <script src="chatting.js"></script>
 </html>
