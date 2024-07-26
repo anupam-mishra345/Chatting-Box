@@ -3,10 +3,7 @@
   <head>
     <title>Chatting Box</title>
 
-    <link
-      rel="icon"
-      href="e57821f1317893d1c2d8e184d4f9d595-chat-bubble-icon-by-vexels.png"
-    />
+    <link rel="icon" href="chatting-box-logo.png" />
 
     <!-- Latest compiled and minified CSS -->
     <link
@@ -28,7 +25,7 @@
         box-sizing: border-box;
       }
       body {
-        background-image: url(beach-birds-calm-clouds-219998.jpg);
+        background-image: url(background-img.jpg);
         background-attachment: fixed;
         background-size: cover;
         background-repeat: no-repeat;
@@ -42,15 +39,10 @@
         font-family: forte;
         background-color: rgb(0, 0, 0, 0.5);
       }
-
-      #divA {
-        overflow-y: scroll;
-        border: 2px solid white;
-        height: 500px;
-        min-width: 300px;
-        background-color: rgb(0, 0, 0, 0.4);
+      #heading img {
+        margin-right: 10px;
       }
-
+      #divA,
       #divB {
         overflow-y: scroll;
         border: 2px solid white;
@@ -59,19 +51,7 @@
         background-color: rgb(0, 0, 0, 0.4);
       }
 
-      #head1 {
-        border: 2px solid white;
-        color: white;
-        background-color: #136747;
-        height: 80px;
-        min-width: 300px;
-      }
-
-      #head1 img {
-        margin: 10px 0px 0px 20px;
-        border-radius: 30px;
-      }
-
+      #head1,
       #head2 {
         border: 2px solid white;
         color: white;
@@ -80,10 +60,12 @@
         min-width: 300px;
       }
 
+      #head1 img,
       #head2 img {
         margin: 10px 0px 0px 20px;
         border-radius: 30px;
       }
+
       h3 {
         margin: -40px 0px 0px 100px;
         font-family: goudy old style;
@@ -94,6 +76,7 @@
         height: 50px;
         color: aliceblue;
         font-size: 24px;
+        border-radius: 5px;
       }
       #text1,
       #text2 {
@@ -103,52 +86,34 @@
 
       #btn1,
       #btn2 {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         height: 45px;
         background-color: green;
         color: aliceblue;
+        border: 0;
+        border-radius: 5px;
+        padding: 10px 20px;
       }
 
-      .childA1 {
-        /*                background-color: lightgreen;*/
-        text-align: right;
-        font-size: 18px;
-        font-family: comic sans ms;
-        padding-right: 15px;
-      }
-      .childA2 {
-        /*                background-color: aliceblue;*/
-        font-size: 18px;
-        font-family: comic sans ms;
-        padding-left: 15px;
-      }
-      .childB1 {
-        /*                background-color: aliceblue;*/
-        font-size: 18px;
-        font-family: comic sans ms;
-        padding-left: 15px;
-      }
+      .childA1,
       .childB2 {
-        /*                background-color: lightgreen;*/
         text-align: right;
         font-size: 18px;
         font-family: comic sans ms;
         padding-right: 15px;
+      }
+      .childA2,
+      .childB1 {
+        font-size: 18px;
+        font-family: comic sans ms;
+        padding-left: 15px;
       }
       .childA1 span {
         background-color: lightgreen;
-        /*                border-radius: 5px;*/
       }
       .childA2 span {
         background-color: aliceblue;
-        /*                border-radius: 5px;*/
       }
-      /*
-            .childB1 span{
-            background-color: aliceblue;
-            border-radius: 5px;
-            }
-            */
       .parentSpan {
         background-color: aliceblue;
         border-radius: 8px;
@@ -156,7 +121,6 @@
       }
       .childB2 span {
         background-color: lightgreen;
-        /*                border-radius: 5px;*/
       }
       .time {
         vertical-align: -30%;
@@ -168,7 +132,16 @@
   <body>
     <br />
     <div class="container-fluid">
-      <center><h1 id="heading">Chatting Box</h1></center>
+      <center>
+        <h1 id="heading">
+          <img
+            src="chatting-box-logo.png"
+            height="80px"
+            width="80px"
+            alt=""
+          />Chatting Box
+        </h1>
+      </center>
     </div>
 
     <div class="container-fluid">
@@ -181,7 +154,7 @@
                 <td>
                   <div id="head1">
                     <img
-                      src="squarequick_201883134929130.jpg"
+                      src="anupam-img.jpg"
                       alt="image "
                       height="50px"
                       width="50px"
@@ -242,7 +215,7 @@
                 <td>
                   <div id="head2">
                     <img
-                      src="IMG_20200527_080700.jpg"
+                      src="devesh-img.jpg"
                       alt="image"
                       height="50px"
                       width="50px"
